@@ -19,32 +19,35 @@
 
 <body>
 <!-- Navigatsioon --->
-  <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-dark py-3 fixed-top" data-bs-theme="dark">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand me-5" href="#">Bootstrap 5</a>
+      <a class="navbar-brand me-5" href="index.html">Bootstrap 5</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown" href="#" id="navbarDropdownWomen" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Naised</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownWomen">
               <li><a class="dropdown-item" href="#">Kingad</a></li>
-              <div class="dropdown-divider"></div>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Saapad</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown" href="#" id="navbarDropdownMen" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Mehed</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMen">
               <li><a class="dropdown-item" href="#">Kingad</a></li>
-              <div class="dropdown-divider"></div>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Saapad</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="meist.html">Meist</a>
           </li>
         </ul>
        
@@ -59,10 +62,10 @@
       <div class="float-end">
       
 	  <!--Login ikoon-->
-        <button class="btn btn-link text-light" type="submit"><span class="bi bi-person"></span></button>
+        <button class="btn btn-link text-light" type="button" aria-label="Logi sisse"><span class="bi bi-person"></span></button>
       
 	  <!--Ostukorvi ikoon-->
-        <a class="btn btn-primary" href="ostukorv.html" type="submit"><span class="bi bi-cart3"></span></button></a>
+        <a class="btn btn-primary" href="ostukorv.html" role="button" aria-label="Ostukorv"><span class="bi bi-cart3"></span></a>
       </div>
     </div>
   </nav>
@@ -85,13 +88,12 @@
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Materjal ja hooldus
                 </button>
               </h2>
 			<!--Tee ise: esimene valik peab olema lehe avamisel avatud.-->
-              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <strong>Hoolda seda toodet õigete vahenditega.</strong> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Phasellus tempor gravida ipsum, non mollis lorem luctus ac. Proin interdum tortor a
@@ -137,13 +139,44 @@
 		</div>
       </div>
     </div>
-    </div>
   </section>
   
-  <!--Tee ise: kujunda siia korrektne jalus - lisa kontaktid ja sotsiaalvõrgustike lingid ikoonidega.-->
-  <footer class="footer bg-light">
+  <!-- Jalus -->
+  <footer class="bg-dark text-light mt-5 pt-5 pb-3">
     <div class="container">
-      <h1>Jalus</h1>
+      <div class="row gy-4">
+        <div class="col-md-6 col-lg-4">
+          <h5 class="text-uppercase">Kontakt</h5>
+          <ul class="list-unstyled small mb-0">
+            <li><i class="bi bi-geo-alt me-2"></i> Näidistänav 1, Tallinn</li>
+            <li><i class="bi bi-telephone me-2"></i> +372 5555 5555</li>
+            <li><i class="bi bi-envelope me-2"></i> info@bootstrapipood.ee</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5 class="text-uppercase">Kasulikud lingid</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a class="link-light link-underline-opacity-0" href="index.html">Avaleht</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="meist.html">Meist</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="ostukorv.html">Ostukorv</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="toode.html">Toode</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="text-uppercase">Jälgi meid</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="#" class="text-light" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-light" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>© 2025 Bootstrapi pood</span>
+        <span>Valminud õppematerjali põhjal</span>
+      </div>
     </div>
   </footer>
   

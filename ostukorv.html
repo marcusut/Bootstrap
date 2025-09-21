@@ -19,32 +19,35 @@
 
 <body>
   <!-- Navigatsioon --->
-  <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-dark py-3 fixed-top" data-bs-theme="dark">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand me-5" href="#">Bootstrap 5</a>
+      <a class="navbar-brand me-5" href="index.html">Bootstrap 5</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown" href="#" id="navbarDropdownWomen" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Naised</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownWomen">
               <li><a class="dropdown-item" href="#">Kingad</a></li>
-              <div class="dropdown-divider"></div>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Saapad</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown" href="#" id="navbarDropdownMen" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Mehed</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMen">
               <li><a class="dropdown-item" href="#">Kingad</a></li>
-              <div class="dropdown-divider"></div>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Saapad</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="meist.html">Meist</a>
           </li>
         </ul>
         
@@ -59,10 +62,10 @@
       <div class="float-end">
        
 	   <!--Login ikoon-->
-        <button class="btn btn-link text-light" type="submit"><span class="bi bi-person"></span></button>
+        <button class="btn btn-link text-light" type="button" aria-label="Logi sisse"><span class="bi bi-person"></span></button>
        
 	   <!--Ostukorvi ikoon-->
-        <a class="btn btn-primary" href="ostukorv.html" type="submit"><span class="bi bi-cart3"></span></button></a>
+        <a class="btn btn-primary" href="ostukorv.html" role="button" aria-label="Ostukorv"><span class="bi bi-cart3"></span></a>
       </div>
     </div>
   </nav>
@@ -75,12 +78,13 @@
           </div>
           <div class="mb-auto p-2 row">
             <div class="col-lg-6">
-              <img src="stephan-seeber-NzAfGi8XuA4-unsplash.jpg" width="100%">
+              <img src="stephan-seeber-NzAfGi8XuA4-unsplash.jpg" width="100%" alt="Ostukorvi toote pilt">
             </div>
 			<div class="col-lg-3">
               <p>199 &#8364;</p>
               <p>Ilusad saapad</p>
-              <select class="form-select">
+              <label for="cartQty" class="form-label">Kogus</label>
+              <select class="form-select" id="cartQty" name="kogus">
                 <option>0</option>
                 <option selected="selected">1</option>
                 <option>2</option>
@@ -90,25 +94,153 @@
             </div>
           </div>
           <div class="p-2">
-            <p>Tarne: tasuta</span></p>
-            <p>Kokku: 199 &#8364;</span></p>
+            <p>Tarne: tasuta</p>
+            <p>Kokku: 199 &#8364;</p>
           </div>
           <div class="p-2 mx-auto">
             <a href="#" class="btn btn-primary btn-lg mb-3">Maksma</a>
           </div>
         </div>
         <div class="col-lg-6">
-          <!--Tee ise: korrasta (lisa) ostukorvi vormi nii, et sellel oleks väljad kasutaja andmete jaoks, makse ja tarneviisi valik ning ostukorv oleks kujundatud järgides kasutajaliidese disaini põhimõtteid.-->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Tellija andmed</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="fname" class="form-label">Eesnimi</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Mari" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="lname" class="form-label">Perekonnanimi</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Maasikas" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="email" class="form-label">E-post</label>
+                    <input type="email" class="form-control" id="email" placeholder="mari@example.com" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="+372 5..." required>
+                  </div>
+                  <div class="col-12">
+                    <label for="address" class="form-label">Aadress</label>
+                    <input type="text" class="form-control" id="address" placeholder="Tänav 1" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="city" class="form-label">Linn</label>
+                    <input type="text" class="form-control" id="city" placeholder="Tallinn" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="zip" class="form-label">Postiindeks</label>
+                    <input type="text" class="form-control" id="zip" placeholder="10111" required>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card shadow-sm mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Makseviis</h5>
+            </div>
+            <div class="card-body">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" id="payCard" checked>
+                <label class="form-check-label" for="payCard"><i class="bi bi-credit-card me-1"></i>Kaardimakse</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" id="payBank">
+                <label class="form-check-label" for="payBank"><i class="bi bi-bank me-1"></i>Pangalingi makse</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" id="payCOD">
+                <label class="form-check-label" for="payCOD"><i class="bi bi-cash-coin me-1"></i>Kauba kättesaamisel</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-header">
+              <h5 class="mb-0">Tarneviis</h5>
+            </div>
+            <div class="card-body">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="shipping" id="shipCourier" checked>
+                <label class="form-check-label" for="shipCourier"><i class="bi bi-truck me-1"></i>Kuller (tasuta)</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="shipping" id="shipParcel">
+                <label class="form-check-label" for="shipParcel"><i class="bi bi-mailbox me-1"></i>Pakiautomaat</label>
+              </div>
+              <div class="row g-2">
+                <div class="col-sm-6">
+                  <label for="parcelVendor" class="form-label">Teenusepakkuja</label>
+                  <select id="parcelVendor" class="form-select">
+                    <option selected>Omniva</option>
+                    <option>DPD</option>
+                    <option>Itella SmartPOST</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="parcelLocation" class="form-label">Automaat</label>
+                  <select id="parcelLocation" class="form-select">
+                    <option selected>Vali automaat...</option>
+                    <option>Tallinn, Ülemiste</option>
+                    <option>Tartu, Lõunakeskus</option>
+                    <option>Pärnu, Kaubamajakas</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-end">
+              <button type="button" class="btn btn-success">Esita tellimus</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   
-  <!--Tee ise: kujunda siia korrektne jalus - lisa kontaktid ja sotsiaalvõrgustike lingid ikoonidega.-->
-  <footer class="footer bg-light">
+  <!-- Jalus -->
+  <footer class="bg-dark text-light mt-5 pt-5 pb-3">
 	<div class="container">
-      <h1>Jalus</h1>
+      <div class="row gy-4">
+        <div class="col-md-6 col-lg-4">
+          <h5 class="text-uppercase">Kontakt</h5>
+          <ul class="list-unstyled small mb-0">
+            <li><i class="bi bi-geo-alt me-2"></i> Näidistänav 1, Tallinn</li>
+            <li><i class="bi bi-telephone me-2"></i> +372 5555 5555</li>
+            <li><i class="bi bi-envelope me-2"></i> info@bootstrapipood.ee</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5 class="text-uppercase">Kasulikud lingid</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a class="link-light link-underline-opacity-0" href="index.html">Avaleht</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="meist.html">Meist</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="ostukorv.html">Ostukorv</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="toode.html">Toode</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="text-uppercase">Jälgi meid</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="#" class="text-light" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-light" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>© 2025 Bootstrapi pood</span>
+        <span>Valminud õppematerjali põhjal</span>
+      </div>
     </div>
   </footer>
   

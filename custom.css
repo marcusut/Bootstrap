@@ -1,3 +1,7 @@
+body {
+    /* Offset for fixed-top navbar (approx. 4.5rem incl. padding) */
+    padding-top: 4.5rem;
+}
 
 footer {
     margin-top: 3rem;
